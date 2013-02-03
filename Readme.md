@@ -3,7 +3,7 @@ This tutorial will provide a chance to learn Git through real world examples.
 We will be following "A successful Git branching model" - http://nvie.com/posts/a-successful-git-branching-model/
 
 # What is Git
-Git is a dustruvyted revusuib control and source code management system.  Git allows a user to turn a directory into a repository with complete history and full revision tracking capabilities.  This repositior is not dependent on a central server.
+Git is a distributed revision control and source code management system.  Git allows a user to turn a directory into a repository with complete history and full revision tracking capabilities.  Git repositories do not rely on a central server.
 
 # Getting started
 If you have not used Git before please follow the steps below to Download/Install/Configure Git.  If you already have Git installed please skip the ##Git Basics section - https://github.com/j0hnb/git-tutorial#git-basics
@@ -42,13 +42,13 @@ Now that you have Git installed, it's time to configure your settings. To do thi
 
 First you need to tell git your name, so that it can properly label the commits you make.  Set the default name for git to use when you commit.
 
-`git config --global user.name 'Your Name Here' `
+`$ git config --global user.name 'Your Name Here' `
 
 ## Email
 
 Git will saves your email address into your commits we  will use the email address to associate your commits with your GitHub account. Set the default email for git to use when you commit.
 
-`git config --global user.email "your_email@youremail.com"
+`$ git config --global user.email "your_email@youremail.com"
 
 ## Generating SSH Keys
 
@@ -65,13 +65,13 @@ In this Git basic workshop we will learn how to initialize and check out local r
     * We have no created a new local git repository for the `IntroductionToGit` project.
 * Adding files
     * Create three .md files within your repository. 
-        * `touch add.md`
-        * `touch status.md`
-        * `touch init.md`
+        * `$ touch add.md`
+        * `$ touch status.md`
+        * `$ touch init.md`
     * Add `status.md` to the local staging repository.
     * `$ git add status.md`
     * `$ git status`
-    * `status.md` has been added to the local index (Cache) but it has not beem commited to the local repository.
+    * `status.md` has been added to the local index (Cache) but it has not been committed to the local repository.
     * Now add all .txt files to the local staging repository
     * `$ git add *.txt`
     * `$ git status`
