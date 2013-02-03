@@ -1,0 +1,1 @@
+fetch from a remote repo and try to merge into the current branch

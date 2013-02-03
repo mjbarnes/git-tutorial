@@ -1,0 +1,1 @@
+adds file contents to the staging area

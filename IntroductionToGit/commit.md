@@ -1,0 +1,1 @@
+records a snapshot of the staging area
