@@ -168,10 +168,10 @@ New commands used in this workshop
 * `$ git merge `
 * `$ git log --oneline --decorate --graph`
 
-# Install and configure the GitHub desktop application. (The application will generate an SSH key and add it to your Github account for you)
+## Github desktop applications
+ Install and configure the GitHub desktop application. (The application will generate an SSH key and add it to your Github account for you)
 Github:windows - http://windows.github.com/
 Github:mac - http://mac.github.com/
-
 
 # Recources:
 https://help.github.com/articles/set-up-git
