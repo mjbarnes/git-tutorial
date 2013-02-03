@@ -17,6 +17,8 @@ If you have not used Git before please follow the steps below to Download/Instal
     * add
     * commit
     * log
+* Working with remote repositories
+    * pushing a new repository to Github
 * Branching and Merging
     * Fork
     * Clone
