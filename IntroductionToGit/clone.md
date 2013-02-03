@@ -1,0 +1,1 @@
+copy a git repository so you can add to it

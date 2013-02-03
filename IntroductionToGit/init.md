@@ -1,0 +1,1 @@
+initializes a directory as a Git repository

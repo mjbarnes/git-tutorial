@@ -1,0 +1,1 @@
+remove files from the staging area

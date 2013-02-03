@@ -1,0 +1,1 @@
+view the status of your files in the working directory and staging area
