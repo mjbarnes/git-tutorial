@@ -28,7 +28,15 @@ If you have not used Git before please follow the steps below to [Download/Insta
     * Merge
     * Diff
     * Checkout
-* Collaboration
+* Be Social - Github is a social open source communitry!
+    * Follow a friend
+    * Watch a project
+    * Pull requests
+    * Issues
+* Resources
+    * Github desktop applications
+    * Markdown
+    * Suggested Reading
 
 ## Download/Install/Configure Git
 Download and install the latest version of Git from [http://git-scm.com](http://git-scm.com/downloads "http://git-scm.com")
@@ -156,15 +164,44 @@ Command                                     | Description
 `$ git merge `                              | merge a branch context into your current one
 `$ git log --oneline --decorate --graph`    | filter your commit history
 
+# Be Social
+
+## Follow a friend
+> One of the great features on GitHub is the ability to see what other people are working on and who they are connecting with. When you follow someone, you will get notifications on your dashboard about their GitHub activity.
+
+Step 1. Pick a friend
+Step 2. Follow that friend.
+
+## Watch a project
+Notifications are powered by the repositories you are watching. If you are watching a repository, you will receive notifications for all discussions.
+
+* Issues and their comments
+* Pull Requests and their comments
+* Comments on any commits
+
+## Star a project
+> Stars are a way to keep track of repositories that you find interesting. Any repositories you were previously watching can now be found on your stars page.
+
+[Star this repository!](https://github.com/j0hnb/git-tutorial/star "Star this repository!")
+
+## Pull requests
+> Pull requests let you tell others about changes you've pushed to a GitHub repository. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
+
+[Github:help - Pull requests](https://help.github.com/articles/using-pull-requests "Github:help - Pull requests")
+
+## Issues
+> When you are collaborating on a project with someone, you sometimes come across problems that need to be fixed. To help you keep track of these problems, each GitHub repo has a section called Issues.
+
+If you notice any issues with this repository please report the issue to the [Git-Tutorial](https://github.com/j0hnb/git-tutorial/issues "Git Tutorial") issues page.
 
 # Resources
 
 ## Github desktop applications
 Install and configure the GitHub desktop application. (The application will generate an SSH key and add it to your Github account for you)
 
-[Github:Windows] (http://windows.github.com "Github:Windows")
+[Github:Windows](http://windows.github.com "Github:Windows")
 
-[Github:Mac] (http://mac.github.com "Github:Mac")
+[Github:Mac](http://mac.github.com "Github:Mac")
 
 ## Markdown
 This tutorial has been written in [Markdown](http://en.wikipedia.org/wiki/Markdown "Markdown").
