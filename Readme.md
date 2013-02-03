@@ -28,7 +28,7 @@ If you have not used Git before please follow the steps below to [Download/Insta
     * Merge
     * Diff
     * Checkout
-* Github
+* Collaboration
 
 ## Download/Install/Configure Git
 Download and install the latest version of Git from [http://git-scm.com](http://git-scm.com/downloads "http://git-scm.com")
@@ -157,6 +157,8 @@ Command                                     | Description
 `$ git log --oneline --decorate --graph`    | filter your commit history
 
 
+# Resources
+
 ## Github desktop applications
 Install and configure the GitHub desktop application. (The application will generate an SSH key and add it to your Github account for you)
 
@@ -164,5 +166,11 @@ Install and configure the GitHub desktop application. (The application will gene
 
 [Github:Mac] (http://mac.github.com "Github:Mac")
 
-# Suggested Reading 
+## Markdown
+This tutorial has been written in [Markdown](http://en.wikipedia.org/wiki/Markdown "Markdown").
+
+[Markable](http://markable.in "Markable") is a good online markdown editor.
+DaringFireBall aslo has a good online [Markdown editor](http://daringfireball.net/projects/markdown/dingus "Markdown editor").
+
+## Suggested Reading 
 [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model "A successful Git Branching model")
