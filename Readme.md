@@ -48,7 +48,7 @@ First you need to tell git your name, so that it can properly label the commits 
 
 Git will saves your email address into your commits we  will use the email address to associate your commits with your GitHub account. Set the default email for git to use when you commit.
 
-`$ git config --global user.email "your_email@youremail.com"
+`$ git config --global user.email 'your_email@youremail.com' `
 
 ## Generating SSH Keys
 
@@ -162,11 +162,14 @@ Visualize the log
 
 New commands used in this workshop
 
-* `$ git clone `
-* `$ git checkout `
-* `$ git tag `
-* `$ git merge `
-* `$ git log --oneline --decorate --graph`
+Command                                     | Description
+------------------------------------------- | ------------------------
+`$ git clone `                              | copy a git repository so you can add to it
+`$ git checkout `                           | switch to a new branch context    
+`$ git tag `                                | tag a point in history as important   
+`$ git merge `                              | merge a branch context into your current one
+`$ git log --oneline --decorate --graph`    | filter your commit history
+
 
 ## Github desktop applications
  Install and configure the GitHub desktop application. (The application will generate an SSH key and add it to your Github account for you)
