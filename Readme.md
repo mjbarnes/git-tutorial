@@ -86,29 +86,15 @@ In this Git basic workshop we will learn how to initialize and check out local r
 During this workshop three Git commands were created as markdown files.  Populate these files with your notes on the individual commands for future reference.
     
 In this practice session we have learned several base git functions.
-We learned how to initialize a git repository
 
-`$ git init`
+Command          | Description
+-----------------| ---------------
+`$ git init`     | initializes a directory as a Git repository
+`$ git status`   | show repository status
+`$ git add`      | adds file contents to the staging area 
+`$ git commit`   | records a snapshot of the staging area
+`$ git log`      | filter your commit history
 
-We learned how to check out repository status
-
-`$ git status`
-
-We learned how to add files to the local repository index
-
-`$ git add`
-
-We learned how to remove an item from the local index and place it back in the working tree
-
-`$ git checkout [File Name]`
-
-We learned how to record our changes to the repository
-
-`$ git commit`
-
-We learned how to view the repository commit log
-
-`$ git log`
 
 ## Git Basics Homework
 Go to http://www.codeschool.com and take their try git, http://try.github.com, course.  Upon completion of the try git course Code School will give you access to level 1 of their Git Real course.  Play level one for some extra practice.
@@ -172,9 +158,8 @@ Command                                     | Description
 
 
 ## Github desktop applications
- Install and configure the GitHub desktop application. (The application will generate an SSH key and add it to your Github account for you)
+Install and configure the GitHub desktop application. (The application will generate an SSH key and add it to your Github account for you)
+ 
 Github:windows - http://windows.github.com/
-Github:mac - http://mac.github.com/
 
-# Recources:
-https://help.github.com/articles/set-up-git
+Github:mac - http://mac.github.com/
