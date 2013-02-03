@@ -1,16 +1,18 @@
 # Git Tutorial
 This tutorial will provide a chance to learn Git through real world examples.
-We will be following "A successful Git branching model" - http://nvie.com/posts/a-successful-git-branching-model/
 
-# What is Git
+## Introduction
+
+### What is Git
 Git is a distributed revision control and source code management system.  Git allows a user to turn a directory into a repository with complete history and full revision tracking capabilities.  Git repositories do not rely on a central server.
 
-# Getting started
+#### Getting started
 If you have not used Git before please follow the steps below to Download/Install/Configure Git.  If you already have Git installed please skip the ##Git Basics section - https://github.com/j0hnb/git-tutorial#git-basics
-
 
 ## Overview
 * Download/Install/Configure Git
+    * Setting up Git
+    * Generating SSH Keys
 * Git Basics workshop
     * init
     * status
@@ -18,7 +20,7 @@ If you have not used Git before please follow the steps below to Download/Instal
     * commit
     * log
 * Working with remote repositories
-    * pushing a new repository to Github
+    * Pushing a repository to Github
 * Branching and Merging
     * Fork
     * Clone
@@ -26,25 +28,23 @@ If you have not used Git before please follow the steps below to Download/Instal
     * Merge
     * Diff
     * Checkout
-    * Pull Requests
+* Github
 
-    
-    
 ## Download/Install/Configure Git
 Download and install the latest version of Git from http://git-scm.com/downloads
 
 **Be warned: Do not use PuTTY if you are given the option. GitHub only provides support for openssh.
 
-## Set up Git
+## Setting up Git
 Now that you have Git installed, it's time to configure your settings. To do this you need to open Git Bash (not the Windows command line).
 
-## Username
+### Username
 
 First you need to tell git your name, so that it can properly label the commits you make.  Set the default name for git to use when you commit.
 
 `$ git config --global user.name 'Your Name Here' `
 
-## Email
+### Email
 
 Git will saves your email address into your commits we  will use the email address to associate your commits with your GitHub account. Set the default email for git to use when you commit.
 
@@ -163,3 +163,6 @@ Install and configure the GitHub desktop application. (The application will gene
 Github:windows - http://windows.github.com/
 
 Github:mac - http://mac.github.com/
+
+# Suggested Reading 
+ "A successful Git branching model" - http://nvie.com/posts/a-successful-git-branching-model/
