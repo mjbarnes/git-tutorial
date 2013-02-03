@@ -3,11 +3,11 @@ This tutorial will provide a chance to learn Git through real world examples.
 
 ## Introduction
 
-### What is Git
-Git is a distributed revision control and source code management system.  Git allows a user to turn a directory into a repository with complete history and full revision tracking capabilities.  Git repositories do not rely on a central server.
+### Git is
+A distributed revision control and source code management system.  Git allows a user to turn a directory into a repository with complete history and full revision tracking capabilities.  Git repositories do not rely on a central server.
 
-#### Getting started
-If you have not used Git before please follow the steps below to Download/Install/Configure Git.  If you already have Git installed please skip the ##Git Basics section - https://github.com/j0hnb/git-tutorial#git-basics
+#### Getting started with Git
+If you have not used Git before please follow the steps below to [Download/Install/Configure Git](https://github.com/j0hnb/git-tutorial#downloadinstallconfigure-git "Download/Install/Configure Git").  If you already have Git installed please skip the [Git Basics workshop](https://github.com/j0hnb/git-tutorial#git-basics-workshop "Git Basics workshop").
 
 ## Overview
 * Download/Install/Configure Git
@@ -31,7 +31,7 @@ If you have not used Git before please follow the steps below to Download/Instal
 * Github
 
 ## Download/Install/Configure Git
-Download and install the latest version of Git from http://git-scm.com/downloads
+Download and install the latest version of Git from [http://git-scm.com](http://git-scm.com/downloads "http://git-scm.com")
 
 **Be warned: Do not use PuTTY if you are given the option. GitHub only provides support for openssh.
 
@@ -52,7 +52,7 @@ Git will saves your email address into your commits we  will use the email addre
 
 ## Generating SSH Keys
 
-Follow the instructions provided by GitHub - https://help.github.com/articles/generating-ssh-keys
+Follow the [generating SSH key](https://help.github.com/articles/generating-ssh-keys "generating SSH key") instructions provided by GitHub.
 
 # Git Basics workshop
 In this Git basic workshop we will learn how to initialize and check out local reposiroty's status.  We'll add and remove documents to the repository's index.  We'll wrap up the basic workshop by commiting our changes to the repository and reviewing the commit log.
@@ -97,7 +97,7 @@ Command          | Description
 
 
 ## Git Basics Homework
-Go to http://www.codeschool.com and take their try git, http://try.github.com, course.  Upon completion of the try git course Code School will give you access to level 1 of their Git Real course.  Play level one for some extra practice.
+Go to [CodeSchool.com](http://www.codeschool.com "CodeSchool.com") and login with your GitHub account.  After you have signed in take the [Try Git](http://try.github.com "Try Git") course.  Upon completion of the try git course Code School will give you access to level 1 of their Git Real course.  Play level one for some extra practice.
 
 # Working with remote repositories
 
@@ -159,10 +159,10 @@ Command                                     | Description
 
 ## Github desktop applications
 Install and configure the GitHub desktop application. (The application will generate an SSH key and add it to your Github account for you)
- 
-Github:windows - http://windows.github.com/
 
-Github:mac - http://mac.github.com/
+[Github:Windows] (http://windows.github.com "Github:Windows")
+
+[Github:Mac] (http://mac.github.com "Github:Mac")
 
 # Suggested Reading 
- "A successful Git branching model" - http://nvie.com/posts/a-successful-git-branching-model/
+[A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model "A successful Git Branching model")
