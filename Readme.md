@@ -10,33 +10,36 @@ A distributed revision control and source code management system.  Git allows a 
 If you have not used Git before please follow the steps below to [Download/Install/Configure Git](https://github.com/j0hnb/git-tutorial#downloadinstallconfigure-git "Download/Install/Configure Git").  If you already have Git installed please skip the [Git Basics workshop](https://github.com/j0hnb/git-tutorial#git-basics-workshop "Git Basics workshop").
 
 ## Overview
-* Download/Install/Configure Git
-    * Setting up Git
-    * Generating SSH Keys
-* Git Basics workshop
+* [Download/Install/Configure Git](https://github.com/j0hnb/git-tutorial#downloadinstallconfigure-git "Download/Install/Configure Git")
+    * [Setting up Git](https://github.com/j0hnb/git-tutorial#setting-up-git "Setting up Git")
+    * [Generating SSH Keys](https://github.com/j0hnb/git-tutorial#generating-ssh-keys "Generating SSH Keys")
+* [Git Basics workshop](https://github.com/j0hnb/git-tutorial#git-basics-workshop "Git Basics workshop")
     * init
     * status
     * add
     * commit
     * log
-* Working with remote repositories
+    * [Git basics homework](https://github.com/j0hnb/git-tutorial#git-basics-homework "Git basics homework")
+* [Working with remote repositories](https://github.com/j0hnb/git-tutorial#working-with-remote-repositories "Working with remote repositories")
     * Pushing a repository to Github
 * Branching and Merging
-    * Fork
     * Clone
     * Branch
     * Merge
     * Diff
+    * Tag
     * Checkout
-* Be Social - Github is a social open source communitry!
-    * Follow a friend
-    * Watch a project
-    * Pull requests
-    * Issues
-* Resources
-    * Github desktop applications
-    * Markdown
-    * Suggested Reading
+    * log  --oneline --decorate --graph
+* [Be Social](https://github.com/j0hnb/git-tutorial#be-social "Be Social") - Github is a social open source communitry!
+    * Fork a repository
+    * [Follow a friend](https://github.com/j0hnb/git-tutorial#follow-a-friend "Follow a friend")
+    * [Watch a project](https://github.com/j0hnb/git-tutorial#watch-a-project "Watch a project")
+    * [Pull requests](https://github.com/j0hnb/git-tutorial#pull-requests "Pull request")
+    * [Issues](https://github.com/j0hnb/git-tutorial#issues "Issues")
+* [Resources](https://github.com/j0hnb/git-tutorial#resources "Resouces")
+    * [Github desktop applications](https://github.com/j0hnb/git-tutorial#github-desktop-applications "Github desktop applications")
+    * [Markdown](https://github.com/j0hnb/git-tutorial#markdown "Markdown")
+    * [Suggested Reading](https://github.com/j0hnb/git-tutorial#suggested-reading "Suggested Reading")
 
 ## Download/Install/Configure Git
 Download and install the latest version of Git from [http://git-scm.com](http://git-scm.com/downloads "http://git-scm.com")
@@ -216,8 +219,6 @@ C:\git\IntroductionToGit [master]>
 
 # Branching and Merging
 
-In the Github website `Fork` this repository.  Forking will add a clone of this repository to your account.  But the repository is currently only stored on Github.
-
 To make a local copy of the git-tutorial repository call by using the `$ git clone` command
 
 `$ git clone https://github.com/j0hnb/git-tutorial.git`
@@ -359,6 +360,11 @@ Command                                     | Description
 `$ git log --oneline --decorate --graph`    | filter your commit history
 
 # Be Social
+
+## Fork a repository
+If you want to contribute to someone else's project you or would like to use someone else's project as a starting point for a project of your own you would want to "Fork" their repository.  Forking will clone the origional repository and place it within your Github account.  
+If you would like to help develope this git tutorial then Fork this repository by selecting the Fork button from the top of the page or by clicking [fork me](https://github.com/j0hnb/git-tutorial/fork_select "fork me").  Update and extend this repository and when you're done issue a Pull request so that your edits can be included in this master repository.
+
 
 ## Follow a friend
 > One of the great features on GitHub is the ability to see what other people are working on and who they are connecting with. When you follow someone, you will get notifications on your dashboard about their GitHub activity.
