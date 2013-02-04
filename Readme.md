@@ -303,15 +303,13 @@ For the next part of this workshop we will clone this git-tutorial repository an
     C:\git\git-tutorial [diff-example]> git tag
     C:\git\git-tutorial [diff-example]>
     </pre>
-
     * We've reviewed the tags in place on this repository and we want to add a the a version 1.0.1 tag. 
     * `$ git tag -a v1.0.1 -m 'version 1.0.1' `
     <pre>
     C:\git\git-tutorial [diff-example]> git tag -a v1.0.1 -m 'version 1.0.1'
     C:\git\git-tutorial [diff-example]>
     </pre>
-
-    * We can verify that the tag was created by `git tag` again
+    * We can verify now that the tag was created by using `git tag`
     * `$ git tag`
     <pre>
     C:\git\git-tutorial [diff-example]> git tag
