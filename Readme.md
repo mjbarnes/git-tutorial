@@ -41,7 +41,7 @@ If you have not used Git before please follow the steps below to [Download/Insta
 ## Download/Install/Configure Git
 Download and install the latest version of Git from [http://git-scm.com](http://git-scm.com/downloads "http://git-scm.com")
 
-**Be warned: Do not use PuTTY if you are given the option. GitHub only provides support for openssh.
+*Be warned: Do not use PuTTY if you are given the option. GitHub only provides support for openssh.*
 
 ## Setting up Git
 Now that you have Git installed, it's time to configure your settings. To do this you need to open Git Bash (not the Windows command line).
@@ -195,47 +195,158 @@ Go to [CodeSchool.com](http://www.codeschool.com "CodeSchool.com") and login wit
 Create a new repository in GitHub called `IntroductionToGit`
 
 Now push the IntrductionToGit repository to GitHub
+`$ git remote add origin git@github.com:[User Name]/IntroductionToGit.git`
+`$vgit push -u origin master`
 <pre>
-git remote add origin git@github.com:[User Name]/IntroductionToGit.git
-git push -u origin master
+C:\git\IntroductionToGit [master]> git remote add origin git@github.com:j0hnb/In
+troductionToGit.git
+C:\git\IntroductionToGit [master]> git push -u origin master
+Warning: Permanently added 'github.com,207.97.227.239' (RSA) to the list of know
+n hosts.
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 228 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:j0hnb/IntroductionToGit.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+C:\git\IntroductionToGit [master]>
 </pre>
 
 # Branching and Merging
 
 In the Github website `Fork` this repository.  Forking will add a clone of this repository to your account.  But the repository is currently only stored on Github.
 
-To make a local copy of this repository call `$ git clone [Repository URL]`
+To make a local copy of the git-tutorial repository call by using the `$ git clone` command
 
-`$ git clone https://github.com/[User Name]/git-tutorial.git`
+`$ git clone https://github.com/j0hnb/git-tutorial.git`
+<pre>
+C:\git> git clone https://github.com/j0hnb/git-tutorial.git
+Cloning into 'git-tutorial'...
+remote: Counting objects: 90, done.
+remote: Compressing objects: 100% (53/53), done.
+remote: Total 90 (delta 39), reused 75 (delta 24)
+Unpacking objects: 100% (90/90), done.
+</pre>
+Navigate into the git-tutorial directory
 
 In order to organize our changes we're going to create a branch of this repository
 `$ git checkout -b diff-example`
-
-Create a new `diff.md` file.
-
-`$ touch diff.md`
+<pre>
+C:\git\git-tutorial [master]> git checkout -b diff-example
+Switched to a new branch 'diff-example'
+</pre>
 
 Open, edit and save `diff.md`.  Use the `git diff` command to show the changes.
 `$ git diff`
+<pre>
+C:\git\git-tutorial [diff-example]> git diff
+diff --git a/diff.md b/diff.md
+index 125f1a5..2d3a5c1 100644
+--- a/diff.md
++++ b/diff.md
+@@ -1,5 +1,6 @@
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Ut diam ipsum, molestie cursus luctus et, convallis sollicitudin risus.
++What is "Lorem ipsum"?
+ Suspendisse dapibus, elit in vestibulum elementum, libero dolor porttitor mauri
+ Cras augue quam, mattis sed gravida id, ultrices sed enim. In laoreet odio semp
+ Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculu
+ ...
+ C:\git\git-tutorial [diff-example +0 ~1 -0]>
+</pre>
 
 Add the changes to the local repository and commit the changes
 `$ git add diff.md`
-`$ git commit -m 'Completed diff practice' 
+<pre>
+C:\git\git-tutorial [diff-example +0 ~1 -0]> git add diff.md
+C:\git\git-tutorial [diff-example +0 ~1 -0]>
+</pre>
 
-Create a version file
-`$ touch version.md`
+`$ git commit -m 'Commiting Diff example' `
+<pre>
+C:\git\git-tutorial [diff-example +0 ~1 -0]> git commit -m 'Commiting Diff example'
+[diff-example 8c0588c] Commiting Diff example
+ 1 file changed, 1 insertion(+)
+</pre>
 
-Tag the repository for version 1.1
-`$ git tag -a v1.1`
+Now lets see if this repository has any tags.  
+`$ git tag`
+<pre>
+C:\git\git-tutorial [diff-example]> git tag
+C:\git\git-tutorial [diff-example]>
+</pre>
+
+Tag the repository for version 1.0.1
+`$ git tag -a v1.0.1 -m 'version 1.0.1' `
+<pre>
+C:\git\git-tutorial [diff-example]> git tag -a v1.0.1 -m 'version 1.0.1'
+C:\git\git-tutorial [diff-example]>
+</pre>
+
+Now lets verify that the tag that we created is in place
+`$ git tag`
+<pre>
+C:\git\git-tutorial [diff-example]> git tag
+v1.0.1
+C:\git\git-tutorial [diff-example]>
+</pre>
 
 Switch back to master
 `$ git checkout master`
+<pre>
+C:\git\git-tutorial [diff-example]> git checkout master
+Switched to branch 'master'
+C:\git\git-tutorial [master]>
+</pre>
 
 Merge the changes made in the diff-example branch with the master branch
 `$ git merge diff-example`
+<pre>
+C:\git\git-tutorial [master]> git merge diff-example
+Updating 9bc2ecc..8c0588c
+Fast-forward
+ diff.md | 1 +
+ 1 file changed, 1 insertion(+)
+C:\git\git-tutorial [master]>
+</pre>
 
 Visualize the log
 `$ git log --oneline --decorate --graph`
+<pre>
+C:\git\git-tutorial [master]> git log --oneline --decorate --graph
+* 8c0588c (HEAD, tag: v1.0.1, master, diff-example) Commiting Diff example
+* 9bc2ecc (origin/master, origin/HEAD) Added examples to introduction workshop
+* f8a03b9 Created initial Be Social catgeory and updated Resouces category
+* c838d60 Updated resouces
+* 5470962 Updated links
+* 01bb6a1 Formatting updates
+* 82759f5 Cleaned up diff.md
+* f1d994c Moved git commands learned in git basics workshop into a table
+* d4480bd Cleaning up directory
+*   94feb43 Updated git command pages
+|\
+| * 7ebebc7 Updated git command pages
+* | 26f6c3b Added commands table
+* |   08d40f6 Merge branch 'ManPages'
+|\ \
+| |/
+| * 9b8a09e Man Page updates
+* |   9e1177d Merge branch 'documentCleaner'
+|\ \
+| * | ee72f5b spelling updates
+| * | c8c4128 slight formatting changes
+| |/
+* | 1b73af0 Fixing Checkout delete
+|/
+* 77992f4 Added initial "Working with remote repositories"
+* d974719 Initial draft of "Branching and Merging"
+* 61be5d9 Formatting updates
+* 591b17f Initial Git Basics workshop commit
+* 88062ad Initial Commit
+C:\git\git-tutorial [master]>
+</pre>
 
 New commands used in this workshop
 
