@@ -215,154 +215,166 @@ To proceed you will need to have created a local repository like outlined in the
     * `$ git remote add origin git@github.com:[User Name]/IntroductionToGit.git`
     * `$ git push -u origin master`
     <pre>
-    C:\git\IntroductionToGit [master]> git remote add origin git@github.com:j0hnb/In
-    troductionToGit.git
+    C:\git\IntroductionToGit [master]> git remote add origin git@github.com:j0hnb/IntroductionToGit.git
     C:\git\IntroductionToGit [master]> git push -u origin master
-    Warning: Permanently added 'github.com,207.97.227.239' (RSA) to the list of know
-    n hosts.
+    Warning: Permanently added 'github.com,207.97.227.239' (RSA) to the list of known hosts.
     Counting objects: 3, done.
     Delta compression using up to 2 threads.
     Compressing objects: 100% (2/2), done.
     Writing objects: 100% (3/3), 228 bytes, done.
     Total 3 (delta 0), reused 0 (delta 0)
     To git@github.com:j0hnb/IntroductionToGit.git
-    * [new branch]      master -> master
+    \* [new branch]      master -> master
     Branch master set up to track remote branch master from origin.
     C:\git\IntroductionToGit [master]>
     </pre>
+    
 4. Refresh your Github repository to see the changes that you've made.
     
 # Branching and Merging
 
-To make a local copy of the git-tutorial repository call by using the `$ git clone` command
+A branch is a git's way of sectioning off code.  Branching allows you to take a snapshot of the code and work from that snapshot without effecting the master or production code.  A real life example.  You are a software developer and have been alerted of a bug in your production code.  The following workflow will take you through the bug fix process.
+1. The developer will fork, or clone the production repository
+2. The developer will create a branch of the production code to section off his work
+    * The branch name should reflect actions or changes within the branch.  The Bug tracking # would be a good unique branch name
+3. The developer will resolve and test his bug fix within the branch.
+4. Merge the branch with the developer's master repository
+5. The developer will then issue a pull request to the production repository.  
 
-`$ git clone https://github.com/j0hnb/git-tutorial.git`
-<pre>
-C:\git> git clone https://github.com/j0hnb/git-tutorial.git
-Cloning into 'git-tutorial'...
-remote: Counting objects: 90, done.
-remote: Compressing objects: 100% (53/53), done.
-remote: Total 90 (delta 39), reused 75 (delta 24)
-Unpacking objects: 100% (90/90), done.
-</pre>
-Navigate into the git-tutorial directory
+For the next part of this workshop we will clone this git-tutorial repository and work on branching and merging.  For this workshop assume there is an bug with diff.md in which you need to update the file.
 
-In order to organize our changes we're going to create a branch of this repository
-`$ git checkout -b diff-example`
-<pre>
-C:\git\git-tutorial [master]> git checkout -b diff-example
-Switched to a new branch 'diff-example'
-</pre>
+1. We will start by making a clone of the production code.  To make a local copy of the git-tutorial repository use the `$ git clone` command
+    * `$ git clone https://github.com/j0hnb/git-tutorial.git`
+    <pre>
+    C:\git> git clone https://github.com/j0hnb/git-tutorial.git
+    Cloning into 'git-tutorial'...
+    remote: Counting objects: 90, done.
+    remote: Compressing objects: 100% (53/53), done.
+    remote: Total 90 (delta 39), reused 75 (delta 24)
+    Unpacking objects: 100% (90/90), done.
+    </pre>
+2. Now that we have cloned the git-tutorial let's navigate into the git-tutorial directory
+3. We want to section off our work from our local production code by working from a branch
+    * Create a branch named `diff-example` and switch to that branch by using the `-b` attribute
+    * `$ git checkout -b diff-example`
+    <pre>
+    C:\git\git-tutorial [master]> git checkout -b diff-example
+    Switched to a new branch 'diff-example'
+    </pre>
+4. Within the `diff-example` branch open, edit and save `diff.md` 
+5. After you have updated the `diff.md` file let's use the `git diff` command to review the changes
+    * `$ git diff`
+    <pre>
+    C:\git\git-tutorial [diff-example]> git diff
+    diff --git a/diff.md b/diff.md
+    index 125f1a5..2d3a5c1 100644
+    --- a/diff.md
+    +++ b/diff.md
+    @@ -1,5 +1,6 @@
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Ut diam ipsum, molestie cursus luctus et, convallis sollicitudin risus.
+    +What is "Lorem ipsum"?
+    Suspendisse dapibus, elit in vestibulum elementum, libero dolor porttitor mauri
+    Cras augue quam, mattis sed gravida id, ultrices sed enim. In laoreet odio semp
+    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculu
+    ...
+    C:\git\git-tutorial [diff-example +0 ~1 -0]>
+    </pre>
 
-Open, edit and save `diff.md`.  Use the `git diff` command to show the changes.
-`$ git diff`
-<pre>
-C:\git\git-tutorial [diff-example]> git diff
-diff --git a/diff.md b/diff.md
-index 125f1a5..2d3a5c1 100644
---- a/diff.md
-+++ b/diff.md
-@@ -1,5 +1,6 @@
- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- Ut diam ipsum, molestie cursus luctus et, convallis sollicitudin risus.
-+What is "Lorem ipsum"?
- Suspendisse dapibus, elit in vestibulum elementum, libero dolor porttitor mauri
- Cras augue quam, mattis sed gravida id, ultrices sed enim. In laoreet odio semp
- Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculu
- ...
- C:\git\git-tutorial [diff-example +0 ~1 -0]>
-</pre>
+6. Now that we've reviewed the changes and are hapy with our edits we need to merge back into our local production clone.  But before we can merge with production we first need to add our updated file to our local repository
+    * `$ git add diff.md`
+    <pre>
+    C:\git\git-tutorial [diff-example +0 ~1 -0]> git add diff.md
+    C:\git\git-tutorial [diff-example +0 ~1 -0]>
+    </pre>
 
-Add the changes to the local repository and commit the changes
-`$ git add diff.md`
-<pre>
-C:\git\git-tutorial [diff-example +0 ~1 -0]> git add diff.md
-C:\git\git-tutorial [diff-example +0 ~1 -0]>
-</pre>
+7. We've added our changes to our repository, now we need to commit the changes
+    * `$ git commit -m 'Commiting Diff example' `
+    <pre>
+    C:\git\git-tutorial [diff-example +0 ~1 -0]> git commit -m 'Commiting Diff example'
+    [diff-example 8c0588c] Commiting Diff example
+    1 file changed, 1 insertion(+)
+    </pre>
 
-`$ git commit -m 'Commiting Diff example' `
-<pre>
-C:\git\git-tutorial [diff-example +0 ~1 -0]> git commit -m 'Commiting Diff example'
-[diff-example 8c0588c] Commiting Diff example
- 1 file changed, 1 insertion(+)
-</pre>
+8. We've made a minor change in the repository so we should tag the repository with a new version number
+    * Before we add a new version tag we should view the tags on the repository.  This can be done by using `git tag`
+    * `$ git tag`
+    <pre>
+    C:\git\git-tutorial [diff-example]> git tag
+    C:\git\git-tutorial [diff-example]>
+    </pre>
 
-Now lets see if this repository has any tags.  
-`$ git tag`
-<pre>
-C:\git\git-tutorial [diff-example]> git tag
-C:\git\git-tutorial [diff-example]>
-</pre>
+    * We've reviewed the tags in place on this repository and we want to add a the a version 1.0.1 tag. 
+    * `$ git tag -a v1.0.1 -m 'version 1.0.1' `
+    <pre>
+    C:\git\git-tutorial [diff-example]> git tag -a v1.0.1 -m 'version 1.0.1'
+    C:\git\git-tutorial [diff-example]>
+    </pre>
 
-Tag the repository for version 1.0.1
-`$ git tag -a v1.0.1 -m 'version 1.0.1' `
-<pre>
-C:\git\git-tutorial [diff-example]> git tag -a v1.0.1 -m 'version 1.0.1'
-C:\git\git-tutorial [diff-example]>
-</pre>
+    * We can verify that the tag was created by `git tag` again
+    * `$ git tag`
+    <pre>
+    C:\git\git-tutorial [diff-example]> git tag
+    v1.0.1
+    C:\git\git-tutorial [diff-example]>
+    </pre>
 
-Now lets verify that the tag that we created is in place
-`$ git tag`
-<pre>
-C:\git\git-tutorial [diff-example]> git tag
-v1.0.1
-C:\git\git-tutorial [diff-example]>
-</pre>
+9.  We've completed our updates on this branch.  We will now switch back to the master branch and merge the `diff-example` branch into the master branch
+    * `$ git checkout master`
+    <pre>
+    C:\git\git-tutorial [diff-example]> git checkout master
+    Switched to branch 'master'
+    C:\git\git-tutorial [master]>
+    </pre>
 
-Switch back to master
-`$ git checkout master`
-<pre>
-C:\git\git-tutorial [diff-example]> git checkout master
-Switched to branch 'master'
-C:\git\git-tutorial [master]>
-</pre>
+10. Let's merge the changes made in the diff-example branch with the master branch
+    * `$ git merge diff-example`
+    <pre>
+    C:\git\git-tutorial [master]> git merge diff-example
+    Updating 9bc2ecc..8c0588c
+    Fast-forward
+    diff.md | 1 +
+    1 file changed, 1 insertion(+)
+    C:\git\git-tutorial [master]>
+    </pre>
 
-Merge the changes made in the diff-example branch with the master branch
-`$ git merge diff-example`
-<pre>
-C:\git\git-tutorial [master]> git merge diff-example
-Updating 9bc2ecc..8c0588c
-Fast-forward
- diff.md | 1 +
- 1 file changed, 1 insertion(+)
-C:\git\git-tutorial [master]>
-</pre>
+11. Now that we have completed our bug update and merged our branches we can review out commit log to visualize the changes.
+    * `$ git log --oneline --decorate --graph`
+    <pre>
+    C:\git\git-tutorial [master]> git log --oneline --decorate --graph
+    * 8c0588c (HEAD, tag: v1.0.1, master, diff-example) Commiting Diff example
+    * 9bc2ecc (origin/master, origin/HEAD) Added examples to introduction workshop
+    * f8a03b9 Created initial Be Social catgeory and updated Resouces category
+    * c838d60 Updated resouces
+    * 5470962 Updated links
+    * 01bb6a1 Formatting updates
+    * 82759f5 Cleaned up diff.md
+    * f1d994c Moved git commands learned in git basics workshop into a table
+    * d4480bd Cleaning up directory
+    *   94feb43 Updated git command pages
+    |\
+    | * 7ebebc7 Updated git command pages
+    * | 26f6c3b Added commands table
+    * |   08d40f6 Merge branch 'ManPages'
+    |\ \
+    | |/
+    | * 9b8a09e Man Page updates
+    * |   9e1177d Merge branch 'documentCleaner'
+    |\ \
+    | * | ee72f5b spelling updates
+    | * | c8c4128 slight formatting changes
+    | |/
+    * | 1b73af0 Fixing Checkout delete
+    |/
+    * 77992f4 Added initial "Working with remote repositories"
+    * d974719 Initial draft of "Branching and Merging"
+    * 61be5d9 Formatting updates
+    * 591b17f Initial Git Basics workshop commit
+    * 88062ad Initial Commit
+    C:\git\git-tutorial [master]>
+    </pre>
 
-Visualize the log
-`$ git log --oneline --decorate --graph`
-<pre>
-C:\git\git-tutorial [master]> git log --oneline --decorate --graph
-* 8c0588c (HEAD, tag: v1.0.1, master, diff-example) Commiting Diff example
-* 9bc2ecc (origin/master, origin/HEAD) Added examples to introduction workshop
-* f8a03b9 Created initial Be Social catgeory and updated Resouces category
-* c838d60 Updated resouces
-* 5470962 Updated links
-* 01bb6a1 Formatting updates
-* 82759f5 Cleaned up diff.md
-* f1d994c Moved git commands learned in git basics workshop into a table
-* d4480bd Cleaning up directory
-*   94feb43 Updated git command pages
-|\
-| * 7ebebc7 Updated git command pages
-* | 26f6c3b Added commands table
-* |   08d40f6 Merge branch 'ManPages'
-|\ \
-| |/
-| * 9b8a09e Man Page updates
-* |   9e1177d Merge branch 'documentCleaner'
-|\ \
-| * | ee72f5b spelling updates
-| * | c8c4128 slight formatting changes
-| |/
-* | 1b73af0 Fixing Checkout delete
-|/
-* 77992f4 Added initial "Working with remote repositories"
-* d974719 Initial draft of "Branching and Merging"
-* 61be5d9 Formatting updates
-* 591b17f Initial Git Basics workshop commit
-* 88062ad Initial Commit
-C:\git\git-tutorial [master]>
-</pre>
+12. Once the work has been completed with this branch a pull request will need to be issued to the production repository.  This pull request will ask the production manager to review your changes and if approved to merge your branch with the production repository.
 
 New commands used in this workshop
 
