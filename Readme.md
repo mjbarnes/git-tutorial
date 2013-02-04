@@ -73,31 +73,31 @@ We will start by creating a local repository.  Git is a decentralized version co
 To proceed with this workshop you will need to have Git installed and configured.  All command line commands will always be displayed with a `$` followed by the command.  For example `$ git init` means from the command line run `git init`.
 
 1. Create a new local repository
-    a. Create a new directory `IntroductionToGit`
-    b. Navigate into `IntroductionToGit`
-    c. Use `git init` to initialize the directory and convert it into a Git repository
-    `$ git init`
-    <pre>
-    C:\git\IntroductionToGit> git init
-    Initialized empty Git repository in C:/git/IntroductionToGit/.git/
-    </pre>
-    d. Now that we have initialized our Git repository lets view the repository status
-    `$ git status`
-    <pre>
-    C:\git\IntroductionToGit [master]> git status
-    \# On branch master
-    \#
-    \# Initial commit
-    \#
-    nothing to commit (create/copy files and use "git add" to track)
-    </pre>
-    e. We have now created a new local Git repository for the `IntroductionToGit` project and we have checked the repository status.  
+    * Create a new directory `IntroductionToGit`
+    * Navigate into `IntroductionToGit`
+    * Use `git init` to initialize the directory and convert it into a Git repository
+        * `$ git init`
+        <pre>
+        C:\git\IntroductionToGit> git init
+        Initialized empty Git repository in C:/git/IntroductionToGit/.git/
+        </pre>
+    * Now that we have initialized our Git repository lets view the repository status
+        * `$ git status`
+        <pre>
+        C:\git\IntroductionToGit [master]> git status
+        \# On branch master
+        \#
+        \# Initial commit
+        \#
+        nothing to commit (create/copy files and use "git add" to track)
+        </pre>
+    * We have now created a new local Git repository for the `IntroductionToGit` project and we have checked the repository status.  
     
     Some items to note.  When working inside a Git repository the current branch is visable at all times. For example as seen above we are working in the C:\git\IntroductionToGit directory.  But after the directory path we see [master] `C:\git\IntroductionToGit [master]>`.  This states that we are working on the master branch.  We will go into branching later on in this workshop.
     
 2. Adding files to your local repository
-    a. Before we can add a file to our repository we first need to create a few files to add.  We can quickly create files by using the `touch` command.
-    b. Create three .md files within your repository
+    * Before we can add a file to our repository we first need to create a few files to add.  We can quickly create files by using the `touch` command.
+    * Create three .md files within your repository
         * `$ touch add.md`
         * `$ touch status.md`
         * `$ touch init.md`
@@ -107,13 +107,13 @@ To proceed with this workshop you will need to have Git installed and configured
         C:\git\IntroductionToGit [master +2 ~0 -0 !]> touch init.md
         C:\git\IntroductionToGit [master +3 ~0 -0 !]>
         </pre>
-    c. Now that we have some files to work with let's add `status.md` to the local staging repository.  The staging repository here is a cache repository.  The files are not fully added to the repository until they are commited to that repository.  We can add files to the repository by using the git add command which is followed by the file name  `git add [File Name]`.
+    * Now that we have some files to work with let's add `status.md` to the local staging repository.  The staging repository here is a cache repository.  The files are not fully added to the repository until they are commited to that repository.  We can add files to the repository by using the git add command which is followed by the file name  `git add [File Name]`.
         * `$ git add status.md`
         <pre>
         C:\git\IntroductionToGit [master +3 ~0 -0 !]> git add status.md
         C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]>
-        </pr>
-    d. Now that we have added a file to the local cache lets take a look at out git status to see what it says.
+        </pre>
+    * Now that we have added a file to the local cache lets take a look at out git status to see what it says.
         * `$ git status`
         <pre>
         C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]> git status
@@ -134,13 +134,13 @@ To proceed with this workshop you will need to have Git installed and configured
         C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]>
         </pre>
         * Since status.md has been added to our cache we are not tracking status.md.  We can remove this file from our cache by calling `$ git rm --cached status.md`.  add.md and init.md have not been added to our cache so they are listed as untracked files.  The branch name now has some additional changes.  `[master +1 ~0 -0 | +2 ~0 -0 !]` status that we are on the master branch and we have one file in stating and 2 unstaged files.
-    e. In order to track all of the files that we have created let's add all of the .md files from our directory to our local repository.  This can be done by calling `$ git add *.[File Extension]`
+    * In order to track all of the files that we have created let's add all of the .md files from our directory to our local repository.  This can be done by calling `$ git add *.[File Extension]`
         * `$ git add *.md`
         <pre>
         C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]> git add *.md
         C:\git\IntroductionToGit [master +3 ~0 -0]>
         </pre>
-    f. Now that we've added all of our files to the local repository the master banch says +3 and we can confirm our changes by calling git status.
+    * Now that we've added all of our files to the local repository the master banch says +3 and we can confirm our changes by calling git status.
         * `$ git status`
         <pre>
         C:\git\IntroductionToGit [master +3 ~0 -0]> git status
@@ -158,7 +158,7 @@ To proceed with this workshop you will need to have Git installed and configured
         C:\git\IntroductionToGit [master +3 ~0 -0]>
         </pre>
 3. Now that we have added several files to staging it's time to commit these files to the local repository.
-    a. To move our changes from staging to the master repository we will need to preform a `$ git commit` command.  Git commits require descriptions.  These descriptions should be short descriptions of what has been changes in this commit.  For our first commit we will attach an "Initial commit" message. 
+    * To move our changes from staging to the master repository we will need to preform a `$ git commit` command.  Git commits require descriptions.  These descriptions should be short descriptions of what has been changes in this commit.  For our first commit we will attach an "Initial commit" message. 
         * `$ git commit -m "Initial commit"`
         <pre>
         C:\git\IntroductionToGit [master +3 ~0 -0]> git commit -m "Initial commit"
@@ -169,7 +169,7 @@ To proceed with this workshop you will need to have Git installed and configured
         create mode 100644 status.md
         C:\git\IntroductionToGit [master]>
         </pre>
-    b. Now that we have commited out changes lets take a look at our repository status.
+    * Now that we have commited out changes lets take a look at our repository status.
         * `$ git status`
         <pre>
         C:\git\IntroductionToGit [master]> git status
@@ -177,7 +177,7 @@ To proceed with this workshop you will need to have Git installed and configured
         nothing to commit, working directory clean
         C:\git\IntroductionToGit [master]>
         </pre>
-    c. Our git status is empty.  This is because the git status command reflects active and unsaved work on the git repository.  To view our git commit log we will need to call `$ git log`
+    * Our git status is empty.  This is because the git status command reflects active and unsaved work on the git repository.  To view our git commit log we will need to call `$ git log`
         * `$ git log`
         <pre>
         C:\git\IntroductionToGit [master]> git log
@@ -213,8 +213,8 @@ To proceed you will need to have created a local repository like outlined in the
 1. Log into Github and create a new repository in GitHub called `IntroductionToGit`
 2. Open Git Bash and navigate to your local `IntroductionToGit` repository
 3. We will now push our local `IntroductionToGit` repository to Github
-    `$ git remote add origin git@github.com:[User Name]/IntroductionToGit.git`
-    `$ git push -u origin master`
+    * `$ git remote add origin git@github.com:[User Name]/IntroductionToGit.git`
+    * `$ git push -u origin master`
     <pre>
     C:\git\IntroductionToGit [master]> git remote add origin git@github.com:j0hnb/In
     troductionToGit.git
