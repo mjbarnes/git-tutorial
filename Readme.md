@@ -69,27 +69,110 @@ In this Git basic workshop we will learn how to initialize and check out local r
     * Create a new directory `IntroductionToGit`
     * Navigate into `IntroductionToGit`
     * `$ git init`
+    <pre>
+    C:\git\IntroductionToGit> git init
+    Initialized empty Git repository in C:/git/IntroductionToGit/.git/
+    </pre>
     * `$ git status`
-    * We have no created a new local git repository for the `IntroductionToGit` project.
+    <pre>
+    C:\git\IntroductionToGit [master]> git status
+    \# On branch master
+    \#
+    \# Initial commit
+    \#
+    nothing to commit (create/copy files and use "git add" to track)
+    </pre>
+    * We have now created a new local git repository for the `IntroductionToGit` project
 * Adding files
-    * Create three .md files within your repository. 
+    * Create three .md files within your repository
         * `$ touch add.md`
         * `$ touch status.md`
         * `$ touch init.md`
-    * Add `status.md` to the local staging repository.
+        <pre>
+        C:\git\IntroductionToGit [master]> touch add.md
+        C:\git\IntroductionToGit [master +1 ~0 -0 !]> touch status.md
+        C:\git\IntroductionToGit [master +2 ~0 -0 !]> touch init.md
+        C:\git\IntroductionToGit [master +3 ~0 -0 !]>
+        </pre>
+    * Add `status.md` to the local staging repository
     * `$ git add status.md`
+    <pre>
+    C:\git\IntroductionToGit [master +3 ~0 -0 !]> git add status.md
+    C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]>
+    </pr>
     * `$ git status`
-    * `status.md` has been added to the local index (Cache) but it has not been committed to the local repository.
-    * Now add all .txt files to the local staging repository
-    * `$ git add *.txt`
+    <pre>
+    C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]> git status
+    \# On branch master
+    \#
+    \# Initial commit
+    \#
+    \# Changes to be committed:
+    \#   (use "git rm --cached <file>..." to unstage)
+    \#
+    \#       new file:   status.md
+    \#
+    \# Untracked files:
+    \#   (use "git add <file>..." to include in what will be committed)
+    \#
+    \#       add.md
+    \#       init.md
+    C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]>
+    </pre>
+    * `status.md` has been added to the local index (Cache) but it has not been committed to the local repository
+    * Now add all .md files to the local staging repository
+    * `$ git add *.md`
+    <pre>
+    C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]> git add *.md
+    C:\git\IntroductionToGit [master +3 ~0 -0]>
+    </pre>
     * `$ git status`
+    <pre>
+    C:\git\IntroductionToGit [master +3 ~0 -0]> git status
+    \# On branch master
+    \#
+    \# Initial commit
+    \#
+    \# Changes to be committed:
+    \#   (use "git rm --cached <file>..." to unstage)
+    \#
+    \#       new file:   add.md
+    \#       new file:   init.md
+    \#       new file:   status.md
+    \#
+    C:\git\IntroductionToGit [master +3 ~0 -0]>
+    </pre>
 * Initial commit
-    * To move files out of the local index and into the repository the changes need to be commited.
+    * To move files out of the local index and into the repository the changes need to be commited
     * Perform a commit with the message "Initial commit"
     * `$ git commit -m "Initial commit"`
+    <pre>
+    C:\git\IntroductionToGit [master +3 ~0 -0]> git commit -m "Initial commit"
+    [master (root-commit) acc420d] Initial commit
+    0 files changed
+    create mode 100644 add.md
+    create mode 100644 init.md
+    create mode 100644 status.md
+    C:\git\IntroductionToGit [master]>
+    </pre>
     * Review the Repository status and the commit log
     * `$ git status`
+    <pre>
+    C:\git\IntroductionToGit [master]> git status
+    \# On branch master
+    nothing to commit, working directory clean
+    C:\git\IntroductionToGit [master]>
+    </pre>
     * `$ git log`
+    <pre>
+    C:\git\IntroductionToGit [master]> git log
+    commit acc420dcc8038d250e9180d295845206d1b38771
+    Author: John Banks <jcbanks@gmail.com>
+    Date:   Sun Feb 3 21:13:40 2013 -0500
+
+    Initial commit
+    C:\git\IntroductionToGit [master]>
+    </pre>
     
 During this workshop three Git commands were created as markdown files.  Populate these files with your notes on the individual commands for future reference.
     
@@ -199,15 +282,18 @@ If you notice any issues with this repository please report the issue to the [Gi
 ## Github desktop applications
 Install and configure the GitHub desktop application. (The application will generate an SSH key and add it to your Github account for you)
 
-[Github:Windows](http://windows.github.com "Github:Windows")
-
-[Github:Mac](http://mac.github.com "Github:Mac")
+* [Github:Windows](http://windows.github.com "Github:Windows")
+* [Github:Mac](http://mac.github.com "Github:Mac")
 
 ## Markdown
-This tutorial has been written in [Markdown](http://en.wikipedia.org/wiki/Markdown "Markdown").
+This tutorial has been written in [Github flavored Markdown](http://github.github.com/github-flavored-markdown "Github flavored Markdown").
 
-[Markable](http://markable.in "Markable") is a good online markdown editor.
-DaringFireBall aslo has a good online [Markdown editor](http://daringfireball.net/projects/markdown/dingus "Markdown editor").
+Press *M* on this page to see the github markdown cheat sheet.
+
+### Online Markdown editors
+
+* [Markable](http://markable.in "Markable") is a good online markdown editor.
+* DaringFireBall aslo has a good online [Markdown editor](http://daringfireball.net/projects/markdown/dingus "Markdown editor").
 
 ## Suggested Reading 
 [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model "A successful Git Branching model")
