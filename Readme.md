@@ -340,35 +340,35 @@ For the next part of this workshop we will clone this git-tutorial repository an
     * `$ git log --oneline --decorate --graph`
     <pre>
     C:\git\git-tutorial [master]> git log --oneline --decorate --graph
-    * 8c0588c (HEAD, tag: v1.0.1, master, diff-example) Commiting Diff example
-    * 9bc2ecc (origin/master, origin/HEAD) Added examples to introduction workshop
-    * f8a03b9 Created initial Be Social catgeory and updated Resouces category
-    * c838d60 Updated resouces
-    * 5470962 Updated links
-    * 01bb6a1 Formatting updates
-    * 82759f5 Cleaned up diff.md
-    * f1d994c Moved git commands learned in git basics workshop into a table
-    * d4480bd Cleaning up directory
-    *   94feb43 Updated git command pages
+    \* 8c0588c (HEAD, tag: v1.0.1, master, diff-example) Commiting Diff example
+    \* 9bc2ecc (origin/master, origin/HEAD) Added examples to introduction workshop
+    \* f8a03b9 Created initial Be Social catgeory and updated Resouces category
+    \* c838d60 Updated resouces
+    \* 5470962 Updated links
+    \* 01bb6a1 Formatting updates
+    \* 82759f5 Cleaned up diff.md
+    \* f1d994c Moved git commands learned in git basics workshop into a table
+    \* d4480bd Cleaning up directory
+    \*   94feb43 Updated git command pages
     |\
     | * 7ebebc7 Updated git command pages
-    * | 26f6c3b Added commands table
-    * |   08d40f6 Merge branch 'ManPages'
+    \* | 26f6c3b Added commands table
+    \* |   08d40f6 Merge branch 'ManPages'
     |\ \
     | |/
     | * 9b8a09e Man Page updates
-    * |   9e1177d Merge branch 'documentCleaner'
+    \* |   9e1177d Merge branch 'documentCleaner'
     |\ \
     | * | ee72f5b spelling updates
     | * | c8c4128 slight formatting changes
     | |/
-    * | 1b73af0 Fixing Checkout delete
+    \* | 1b73af0 Fixing Checkout delete
     |/
-    * 77992f4 Added initial "Working with remote repositories"
-    * d974719 Initial draft of "Branching and Merging"
-    * 61be5d9 Formatting updates
-    * 591b17f Initial Git Basics workshop commit
-    * 88062ad Initial Commit
+    \* 77992f4 Added initial "Working with remote repositories"
+    \* d974719 Initial draft of "Branching and Merging"
+    \* 61be5d9 Formatting updates
+    \* 591b17f Initial Git Basics workshop commit
+    \* 88062ad Initial Commit
     C:\git\git-tutorial [master]>
     </pre>
 
