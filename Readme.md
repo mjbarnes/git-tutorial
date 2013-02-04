@@ -66,17 +66,23 @@ Git will saves your email address into your commits we  will use the email addre
 Follow the [generating SSH key](https://help.github.com/articles/generating-ssh-keys "generating SSH key") instructions provided by GitHub.
 
 # Git Basics workshop
-In this Git basic workshop we will learn how to initialize and check out local reposiroty's status.  We'll add and remove documents to the repository's index.  We'll wrap up the basic workshop by commiting our changes to the repository and reviewing the commit log.
+This workshop will walk through the basics of initializing a repository `$ git init` , checking the repository status `$ git status`, adding files to a repository `$ git add`, commiting changes to the repository `$ git commit` and finally reviewing the repository log `$ git log`.  
 
-* Create a new local repository
-    * Create a new directory `IntroductionToGit`
-    * Navigate into `IntroductionToGit`
-    * `$ git init`
+We will start by creating a local repository.  Git is a decentralized version control system which means that to use Git we do not have to connect our repository to a central repository store unless we want to.  We will being by turning a normal file directory into a Git repository.  We will then move forward by adding files to the local cache and then once we are comfortable with the changes that we've made we will or commit the files to the local repository.
+
+To proceed with this workshop you will need to have Git installed and configured.  All command line commands will always be displayed with a `$` followed by the command.  For example `$ git init` means from the command line run `git init`.
+
+1. Create a new local repository
+    a. Create a new directory `IntroductionToGit`
+    b. Navigate into `IntroductionToGit`
+    c. Use `git init` to initialize the directory and convert it into a Git repository
+    `$ git init`
     <pre>
     C:\git\IntroductionToGit> git init
     Initialized empty Git repository in C:/git/IntroductionToGit/.git/
     </pre>
-    * `$ git status`
+    d. Now that we have initialized our Git repository lets view the repository status
+    `$ git status`
     <pre>
     C:\git\IntroductionToGit [master]> git status
     \# On branch master
@@ -85,9 +91,13 @@ In this Git basic workshop we will learn how to initialize and check out local r
     \#
     nothing to commit (create/copy files and use "git add" to track)
     </pre>
-    * We have now created a new local git repository for the `IntroductionToGit` project
-* Adding files
-    * Create three .md files within your repository
+    e. We have now created a new local Git repository for the `IntroductionToGit` project and we have checked the repository status.  
+    
+    Some items to note.  When working inside a Git repository the current branch is visable at all times. For example as seen above we are working in the C:\git\IntroductionToGit directory.  But after the directory path we see [master] `C:\git\IntroductionToGit [master]>`.  This states that we are working on the master branch.  We will go into branching later on in this workshop.
+    
+2. Adding files to your local repository
+    a. Before we can add a file to our repository we first need to create a few files to add.  We can quickly create files by using the `touch` command.
+    b. Create three .md files within your repository
         * `$ touch add.md`
         * `$ touch status.md`
         * `$ touch init.md`
@@ -97,85 +107,87 @@ In this Git basic workshop we will learn how to initialize and check out local r
         C:\git\IntroductionToGit [master +2 ~0 -0 !]> touch init.md
         C:\git\IntroductionToGit [master +3 ~0 -0 !]>
         </pre>
-    * Add `status.md` to the local staging repository
-    * `$ git add status.md`
-    <pre>
-    C:\git\IntroductionToGit [master +3 ~0 -0 !]> git add status.md
-    C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]>
-    </pr>
-    * `$ git status`
-    <pre>
-    C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]> git status
-    \# On branch master
-    \#
-    \# Initial commit
-    \#
-    \# Changes to be committed:
-    \#   (use "git rm --cached <file>..." to unstage)
-    \#
-    \#       new file:   status.md
-    \#
-    \# Untracked files:
-    \#   (use "git add <file>..." to include in what will be committed)
-    \#
-    \#       add.md
-    \#       init.md
-    C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]>
-    </pre>
-    * `status.md` has been added to the local index (Cache) but it has not been committed to the local repository
-    * Now add all .md files to the local staging repository
-    * `$ git add *.md`
-    <pre>
-    C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]> git add *.md
-    C:\git\IntroductionToGit [master +3 ~0 -0]>
-    </pre>
-    * `$ git status`
-    <pre>
-    C:\git\IntroductionToGit [master +3 ~0 -0]> git status
-    \# On branch master
-    \#
-    \# Initial commit
-    \#
-    \# Changes to be committed:
-    \#   (use "git rm --cached <file>..." to unstage)
-    \#
-    \#       new file:   add.md
-    \#       new file:   init.md
-    \#       new file:   status.md
-    \#
-    C:\git\IntroductionToGit [master +3 ~0 -0]>
-    </pre>
-* Initial commit
-    * To move files out of the local index and into the repository the changes need to be commited
-    * Perform a commit with the message "Initial commit"
-    * `$ git commit -m "Initial commit"`
-    <pre>
-    C:\git\IntroductionToGit [master +3 ~0 -0]> git commit -m "Initial commit"
-    [master (root-commit) acc420d] Initial commit
-    0 files changed
-    create mode 100644 add.md
-    create mode 100644 init.md
-    create mode 100644 status.md
-    C:\git\IntroductionToGit [master]>
-    </pre>
-    * Review the Repository status and the commit log
-    * `$ git status`
-    <pre>
-    C:\git\IntroductionToGit [master]> git status
-    \# On branch master
-    nothing to commit, working directory clean
-    C:\git\IntroductionToGit [master]>
-    </pre>
-    * `$ git log`
-    <pre>
-    C:\git\IntroductionToGit [master]> git log
-    commit acc420dcc8038d250e9180d295845206d1b38771
-    Author: John Banks <jcbanks@gmail.com>
-    Date:   Sun Feb 3 21:13:40 2013 -0500
+    c. Now that we have some files to work with let's add `status.md` to the local staging repository.  The staging repository here is a cache repository.  The files are not fully added to the repository until they are commited to that repository.  We can add files to the repository by using the git add command which is followed by the file name  `git add [File Name]`.
+        * `$ git add status.md`
+        <pre>
+        C:\git\IntroductionToGit [master +3 ~0 -0 !]> git add status.md
+        C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]>
+        </pr>
+    d. Now that we have added a file to the local cache lets take a look at out git status to see what it says.
+        * `$ git status`
+        <pre>
+        C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]> git status
+        \# On branch master
+        \#
+        \# Initial commit
+        \#
+        \# Changes to be committed:
+        \#   (use "git rm --cached <file>..." to unstage)
+        \#  
+        \#       new file:   status.md
+        \#
+        \# Untracked files:
+        \#   (use "git add <file>..." to include in what will be committed)
+        \#
+        \#       add.md
+        \#       init.md
+        C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]>
+        </pre>
+        * Since status.md has been added to our cache we are not tracking status.md.  We can remove this file from our cache by calling `$ git rm --cached status.md`.  add.md and init.md have not been added to our cache so they are listed as untracked files.  The branch name now has some additional changes.  `[master +1 ~0 -0 | +2 ~0 -0 !]` status that we are on the master branch and we have one file in stating and 2 unstaged files.
+    e. In order to track all of the files that we have created let's add all of the .md files from our directory to our local repository.  This can be done by calling `$ git add *.[File Extension]`
+        * `$ git add *.md`
+        <pre>
+        C:\git\IntroductionToGit [master +1 ~0 -0 | +2 ~0 -0 !]> git add *.md
+        C:\git\IntroductionToGit [master +3 ~0 -0]>
+        </pre>
+    f. Now that we've added all of our files to the local repository the master banch says +3 and we can confirm our changes by calling git status.
+        * `$ git status`
+        <pre>
+        C:\git\IntroductionToGit [master +3 ~0 -0]> git status
+        \# On branch master
+        \#
+        \# Initial commit
+        \#
+        \# Changes to be committed:
+        \#   (use "git rm --cached <file>..." to unstage)
+        \#
+        \#       new file:   add.md
+        \#       new file:   init.md
+        \#       new file:   status.md
+        \#
+        C:\git\IntroductionToGit [master +3 ~0 -0]>
+        </pre>
+3. Now that we have added several files to staging it's time to commit these files to the local repository.
+    a. To move our changes from staging to the master repository we will need to preform a `$ git commit` command.  Git commits require descriptions.  These descriptions should be short descriptions of what has been changes in this commit.  For our first commit we will attach an "Initial commit" message. 
+        * `$ git commit -m "Initial commit"`
+        <pre>
+        C:\git\IntroductionToGit [master +3 ~0 -0]> git commit -m "Initial commit"
+        [master (root-commit) acc420d] Initial commit
+        0 files changed
+        create mode 100644 add.md
+        create mode 100644 init.md
+        create mode 100644 status.md
+        C:\git\IntroductionToGit [master]>
+        </pre>
+    b. Now that we have commited out changes lets take a look at our repository status.
+        * `$ git status`
+        <pre>
+        C:\git\IntroductionToGit [master]> git status
+        \# On branch master
+        nothing to commit, working directory clean
+        C:\git\IntroductionToGit [master]>
+        </pre>
+    c. Our git status is empty.  This is because the git status command reflects active and unsaved work on the git repository.  To view our git commit log we will need to call `$ git log`
+        * `$ git log`
+        <pre>
+        C:\git\IntroductionToGit [master]> git log
+        commit acc420dcc8038d250e9180d295845206d1b38771
+        Author: John Banks <jcbanks@gmail.com>
+        Date:   Sun Feb 3 21:13:40 2013 -0500
 
-    Initial commit
-    C:\git\IntroductionToGit [master]>
-    </pre>
+        Initial commit
+        C:\git\IntroductionToGit [master]>
+        </pre>
     
 During this workshop three Git commands were created as markdown files.  Populate these files with your notes on the individual commands for future reference.
     
@@ -194,29 +206,33 @@ Command          | Description
 Go to [CodeSchool.com](http://www.codeschool.com "CodeSchool.com") and login with your GitHub account.  After you have signed in take the [Try Git](http://try.github.com "Try Git") course.  Upon completion of the try git course Code School will give you access to level 1 of their Git Real course.  Play level one for some extra practice.
 
 # Working with remote repositories
+Git is a decentralized version control system.  This is a great feature for independent developers but what if you want to share your work?  Git can also connect to a cerntral server to allow for easy version control and collaborations.  In this workshop we will take advantage of Github's git powered collaboration platform.  We will create a new repository on Github and we will push the repository that we created in the first workshop to Github.
 
-Create a new repository in GitHub called `IntroductionToGit`
+To proceed you will need to have created a local repository like outlined in the Git Basics workshop.  You will also need a Github account.  If you have not already created a Github account please do so now by [signing up](https://github.com "signing up").
 
-Now push the IntrductionToGit repository to GitHub
-`$ git remote add origin git@github.com:[User Name]/IntroductionToGit.git`
-`$vgit push -u origin master`
-<pre>
-C:\git\IntroductionToGit [master]> git remote add origin git@github.com:j0hnb/In
-troductionToGit.git
-C:\git\IntroductionToGit [master]> git push -u origin master
-Warning: Permanently added 'github.com,207.97.227.239' (RSA) to the list of know
-n hosts.
-Counting objects: 3, done.
-Delta compression using up to 2 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 228 bytes, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To git@github.com:j0hnb/IntroductionToGit.git
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
-C:\git\IntroductionToGit [master]>
-</pre>
-
+1. Log into Github and create a new repository in GitHub called `IntroductionToGit`
+2. Open Git Bash and navigate to your local `IntroductionToGit` repository
+3. We will now push our local `IntroductionToGit` repository to Github
+    `$ git remote add origin git@github.com:[User Name]/IntroductionToGit.git`
+    `$ git push -u origin master`
+    <pre>
+    C:\git\IntroductionToGit [master]> git remote add origin git@github.com:j0hnb/In
+    troductionToGit.git
+    C:\git\IntroductionToGit [master]> git push -u origin master
+    Warning: Permanently added 'github.com,207.97.227.239' (RSA) to the list of know
+    n hosts.
+    Counting objects: 3, done.
+    Delta compression using up to 2 threads.
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (3/3), 228 bytes, done.
+    Total 3 (delta 0), reused 0 (delta 0)
+    To git@github.com:j0hnb/IntroductionToGit.git
+    * [new branch]      master -> master
+    Branch master set up to track remote branch master from origin.
+    C:\git\IntroductionToGit [master]>
+    </pre>
+4. Refresh your Github repository to see the changes that you've made.
+    
 # Branching and Merging
 
 To make a local copy of the git-tutorial repository call by using the `$ git clone` command
